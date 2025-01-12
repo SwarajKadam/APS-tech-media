@@ -3,28 +3,29 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '../shared/Button';
 
 export const Contact = () => (
-  <section className="py-20 px-6 glass-effect" id="contact">
+  <section className="py-20 px-6 bg-gradient-to-b from-black via-slate-900 to-black" id="contact">
+    
     <div className="container mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-16 neon-text">Get in Touch</h2>
+      <h2 className="text-5xl text-center font-bold mb-12 pb-12 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-fade-in">Get in Touch</h2>
       <div className="grid md:grid-cols-2 gap-12">
-        <div>
+        <div className='animate-fade-in'>
           <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
               <Mail className="text-cyan-400" />
-              <p>info@apsmediatech.com</p>
+              <p className='text-lg md:text-xl'>info@apsmediatech.com</p>
             </div>
             <div className="flex items-center space-x-4">
               <Phone className="text-cyan-400" />
-              <p>+1 (555) 123-4567</p>
+              <p className='text-lg md:text-xl'>+1 (555) 123-4567</p>
             </div>
             <div className="flex items-center space-x-4">
               <MapPin className="text-cyan-400" />
-              <p>123 Innovation Street, Tech City, TC 12345</p>
+              <p className='text-lg md:text-xl'>123 Innovation Street, Tech City, TC 12345</p>
             </div>
           </div>
         </div>
-        <form className="space-y-6">
+        <form className="space-y-6 animate-fade-in">
           <div>
             <input
               type="text"

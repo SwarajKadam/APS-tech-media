@@ -3,11 +3,11 @@ import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import { Logo } from '../shared/Logo';
 
 export const Footer = () => (
-  <footer className="py-12 px-6 glass-effect">
+  <footer className="py-12 px-6 bg-gray-950">
     <div className="container mx-auto">
       <div className="grid md:grid-cols-4 gap-8">
         <div>
-          <Logo />
+          {/* <Logo /> */}
           <p className="text-gray-300 mt-4">Transforming businesses through digital innovation.</p>
         </div>
         <div>
@@ -25,7 +25,7 @@ export const Footer = () => (
         <div>
           <h4 className="text-xl font-bold mb-4">Services</h4>
           <ul className="space-y-2 text-gray-300">
-            {['Digital Marketing', 'Web Development', 'AI Solutions', 'SEO Optimization'].map((item) => (
+            {[ 'Web Development', 'AI Solutions', 'Backend Systems'].map((item) => (
               <li key={item}>
                 <a href="#" className="hover:text-cyan-400 transition-colors">
                   {item}

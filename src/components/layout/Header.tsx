@@ -1,63 +1,96 @@
-import { useState, useEffect } from 'react';
-import { NavLinks } from '../shared/NavLinks';
-import { Logo } from '../shared/Logo';
-import { Menu, X } from 'lucide-react';
+
+
+
+
+
+// src/components/Navbar.tsx
+import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import logo from '../../assets/react.svg';
 
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect py-4' : 'py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
-          <Logo />
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
+    <nav className="fixed w-full z-50  bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 backdrop-blur-3xl shadow-lg">
+      <div className="max-w-8xl px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link 
+              to="/" 
+              
+            >
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <NavLinks />
+              <img src={logo} alt="" className='h-10' />
+            </Link>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-300 hover:text-purple-600 transition-colors">
+              Home
+            </Link>
+            <Link to="/portfolio" className="text-gray-300 hover:text-purple-600 transition-colors">
+              Portfolio
+            </Link>
+
+            
+
+            <Link to="/" className="text-gray-300 hover:text-purple-600 transition-colors">
+              About
+            </Link>
+
+            <Link to="/" className="text-gray-300 hover:text-purple-600 transition-colors">
+              Services
+            </Link>
+
+            
+            <Link to="/">
+              <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">
+                Get In Touch
+              </button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 animate-fade-in">
-            <nav className="flex flex-col space-y-4">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="hover:text-cyan-400 transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-          </div>
-        )}
       </div>
-    </header>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+            <Link to="/" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
+              Home
+            </Link>
+            <Link to="/portfolio" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
+              Portfolio
+            </Link>
+           
+            <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
+              Contact
+            </Link>
+            <button 
+              // onClick={() => handleNavigation('/contact')}
+              className="w-full mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full"
+            >
+              Enroll Now
+            </button>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
+

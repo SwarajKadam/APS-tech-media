@@ -1,29 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
-import { About } from './components/sections/About';
-import { Services } from './components/sections/Services';
-import { Portfolio } from './components/sections/Portfolio';
-import { Contact } from './components/sections/Contact';
-import ParticleBackground from "./components/sections/test";
-// import Morphing from './components/sections/morphingCircleText';
-
+import { Header } from "./components/layout/Header";
+import Home from "./pages/home";
+import { Footer } from "./components/layout/Footer";
+import Portfolio from "./pages/portfolio";
+import ProjectDetail from "./pages/projectDetail";
 
 function App() {
   return (
     <div className="bg-black text-white min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Contact />
-        <ParticleBackground />
-        {/* <Morphing/> */}
-        
-      </main>
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
+        </div>
+      </Router>
+
       <Footer />
     </div>
   );
