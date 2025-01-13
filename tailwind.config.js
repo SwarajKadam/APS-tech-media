@@ -13,6 +13,14 @@ export default {
         'slide-in-right': 'slideInRight 0.8s ease-out forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
         'scale-in': 'scaleIn 0.8s ease-out forwards',
+        'gradient': 'gradient 8s linear infinite',
+      },
+      keyframes: {
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       container: {
         center: true,

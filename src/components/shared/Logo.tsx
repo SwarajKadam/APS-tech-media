@@ -1,6 +1,13 @@
+import GradientText from '../shared/GradientText'
 
 export const Logo = () => (
-  <div className="text-2xl font-bold neon-text text-slate-400">
-    APS Media Tech
-  </div>
+    
+  <GradientText
+    colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+    animationSpeed={3}
+    showBorder={false}
+    className="custom-class text-2xl"
+  >
+    Kyodai WaveTech
+  </GradientText>
 );

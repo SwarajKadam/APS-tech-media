@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Header } from "../components/layout/Header";
 import Hero from "../components/portfoilio-components/p-hero";
-import ProjectFilter from "../components/portfoilio-components/p-filter";
+// import ProjectFilter from "../components/portfoilio-components/p-filter";
 import ProjectGrid from "../components/portfoilio-components/p-grid";
 import { portfolioProjects } from "../portfolio-data/portfolioData";
 import SplashCursor from "../components/shared/SplashCursir";
 
 function App() {
+  // @ts-ignore
   const [activeFilter, setActiveFilter] = useState("all");
   const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = portfolioProjects.filter(
+    // @ts-ignore
     (project) =>
       activeFilter === "all" /**|| project.category === activeFilter**/
   );

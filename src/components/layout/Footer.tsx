@@ -4,11 +4,11 @@ import { Logo } from '../shared/Logo';
 
 export const Footer = () => (
   <footer className="py-12 px-6 bg-gray-950">
-    <div className="container mx-auto">
+    <div className="text-center container mx-auto">
       <div className="grid md:grid-cols-4 gap-8">
-        <div>
-          {/* <Logo /> */}
-          <p className="text-gray-300 mt-4">Transforming businesses through digital innovation.</p>
+        <div className='text-center'>
+          <Logo />
+          <p className="text-lg text-gray-300 mt-4 text-center">Transforming businesses through digital innovation.</p>
         </div>
         <div>
           <h4 className="text-xl font-bold mb-4">Quick Links</h4>
@@ -36,7 +36,7 @@ export const Footer = () => (
         </div>
         <div>
           <h4 className="text-xl font-bold mb-4">Follow Us</h4>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center">
             {[
               { Icon: Linkedin, href: '#' },
               { Icon: Twitter, href: '#' },
@@ -55,7 +55,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-300">
-        <p>&copy; {new Date().getFullYear()} APS Media Tech. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Kyodai WaveTech. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -5,7 +5,7 @@ import astromanvi_img from "../assets/astromanvi.jpg";
 export const portfolioProjects: PortfolioProject[] = [
   {
     id: "techyguru",
-    title: "Website creation",
+    title: "Techyguru Academy Website",
     imageUrl: techyguru_img,
     client: "Techyguru Academy",
     location: "Pune",
@@ -61,7 +61,7 @@ export const portfolioProjects: PortfolioProject[] = [
 
   {
     id: "astromanvi",
-    title: "AstroManvi Website Creation",
+    title: "AstroManvi Website",
     imageUrl: astromanvi_img,
     client: "AstroManvi",
     location: "Pune",
@@ -111,8 +111,9 @@ export const portfolioProjects: PortfolioProject[] = [
         "The website for AstroManvi is ready for launch, providing an engaging and seamless platform for astrology enthusiasts. With all core features integrated and optimized, it is positioned to attract users and establish a strong online presence upon going live.",
     },
     thumbnailUrl: "/api/placeholder/400/320",
-    link: "https://techyguruacademy.com/",
+    link: "https://astromanvi.vercel.app/",
   },
+  
 ];
 
 export const categories = [

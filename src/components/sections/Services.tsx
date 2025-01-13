@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   Code2,
   Database,
@@ -7,7 +7,7 @@ import {
 import { GlareCardDemo } from "../shared/GlareCard";
 
 const Services = () => {
-  const [activeService, setActiveService] = useState(null);
+  // const [activeService, setActiveService] = useState(null);
 
   const services = [
     {
@@ -58,8 +58,8 @@ const Services = () => {
             <div
               key={index}
               className="group relative"
-              onMouseEnter={() => setActiveService(index)}
-              onMouseLeave={() => setActiveService(null)}
+              // onMouseEnter={() => setActiveService(index)}
+              // onMouseLeave={() => setActiveService(null)}
             >
               <GlareCardDemo
                 icon={service.icon}

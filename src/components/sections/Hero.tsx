@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Waves from "../shared/Waves";
-
+import {Link} from 'react-router-dom'
 const Hero = () => {
+  // @ts-ignore
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -71,15 +72,15 @@ const Hero = () => {
               innovation.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg text-white font-medium hover:opacity-90 transition-all hover:scale-105 flex items-center justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to='/'><button className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg text-white font-medium hover:opacity-90 transition-all hover:scale-105 flex items-center justify-center">
                 Get In Touch
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="group px-8 py-4 bg-slate-800/50 border border-slate-700 rounded-lg text-white font-medium hover:bg-slate-800 transition-all hover:scale-105 flex items-center justify-center">
+              </button></Link>
+              <Link to='/portfolio'><button className="group px-8 py-4 bg-slate-800/50 border border-slate-700 rounded-lg text-white font-medium hover:bg-slate-800 transition-all hover:scale-105 flex items-center justify-center">
                 View Our Work
                 <Sparkles className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

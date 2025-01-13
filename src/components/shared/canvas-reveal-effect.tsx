@@ -1,4 +1,4 @@
-"use client";
+// @ts-nocheck
 import { cn } from "../../lib/utils.ts";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";

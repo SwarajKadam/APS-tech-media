@@ -4,10 +4,11 @@
 
 
 // src/components/Navbar.tsx
-import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import logo from '../../assets/react.svg';
+import  { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+// import logo from '../../assets/react.svg';
+import {Logo} from '../shared/Logo'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export const Header = () => {
               
             >
 
-              <img src={logo} alt="" className='h-10' />
+              <Logo />
             </Link>
           </div>
 
@@ -42,11 +43,11 @@ export const Header = () => {
 
             
 
-            <Link to="/" className="text-gray-300 hover:text-purple-600 transition-colors">
+            <Link to="/about" className="text-gray-300 hover:text-purple-600 transition-colors">
               About
             </Link>
 
-            <Link to="/" className="text-gray-300 hover:text-purple-600 transition-colors">
+            <Link to="/services" className="text-gray-300 hover:text-purple-600 transition-colors">
               Services
             </Link>
 

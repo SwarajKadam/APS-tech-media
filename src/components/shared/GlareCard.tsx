@@ -1,14 +1,10 @@
 import { GlareCard } from "./glare-card";
-import React from "react";
+
 
 export function GlareCardDemo({
   icon,
   title,
   description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
 }) {
   return (
     <GlareCard className="flex flex-col items-center justify-center">

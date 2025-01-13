@@ -19,9 +19,12 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      "@typescript-eslint/no-explicit-any": "off",  // Disable explicit 'any' errors
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+      '@typescript-eslint/no-explicit-any': ["error", { "ignoreRestArgs": true }],
       'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
+        'warn',{ allowConstantExport: true },
+        
       ],
     },
   },

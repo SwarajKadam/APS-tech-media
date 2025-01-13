@@ -11,7 +11,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, imageUrl, id }) => {
   return (
     <Link to={`/project/${id}`}>
-      <div className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+      <div className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-slide-in">
         <div className="aspect-w-16 aspect-h-12 w-full">
           <img
             src={imageUrl}
